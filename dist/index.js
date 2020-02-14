@@ -953,8 +953,11 @@ async function run() {
   try { 
     const javaVersion = core.getInput('java_version');
     console.log(`Install java version ${javaVersion}`);
-    await exec.exec('ls', ['-la', '.github']);
-    await exec.exec('sh', ['./install_java.sh',javaVersion]);
+    // Set the src-path
+    const src = __dirname + "/src";
+    core.debug(`src: ${src}`);
+
+    await exec.exec(`${src}/install_java.sh`, [javaVersion]);
   } 
   catch (error) {
     core.setFailed(error.message);
