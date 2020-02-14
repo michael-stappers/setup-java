@@ -1,18 +1,13 @@
 const core = require('@actions/core');
-const wait = require('./wait');
+const exec = require('@actions/exec');
 
 
 // most @actions toolkit packages have async methods
 async function run() {
   try { 
-    const ms = core.getInput('milliseconds');
-    console.log(`Waiting ${ms} milliseconds ...`)
-
-    core.debug((new Date()).toTimeString())
-    wait(parseInt(ms));
-    core.debug((new Date()).toTimeString())
-
-    core.setOutput('time', new Date().toTimeString());
+    const javaVersion = core.getInput('java_version');
+    console.log(`Install java version ${javaVersion}`)
+    await exec.exec('./install_java.sh', [javaVersion]);
   } 
   catch (error) {
     core.setFailed(error.message);

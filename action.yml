@@ -1,13 +1,10 @@
-name: 'Wait'
-description: 'Wait a designated number of milliseconds'
+name: 'Setup Java'
+description: 'Setup Java for the desired version (8 or 11)'
 inputs:
-  milliseconds:  # id of input
-    description: 'number of milliseconds to wait'
+  java_version:
+    description: 'number of the java version'
     required: true
-    default: '1000'
-outputs:
-  time: # output will be available to future steps 
-    description: 'The message to output'
+    default: '11'
 runs:
   using: 'node12'
   main: 'dist/index.js'
