@@ -952,8 +952,8 @@ const exec = __webpack_require__(986);
 async function run() {
   try { 
     const javaVersion = core.getInput('java_version');
-    console.log(`Install java version ${javaVersion}`)
-    await exec.exec('./install_java.sh', [javaVersion]);
+    console.log(`Install java version ${javaVersion}`);
+    await exec.exec('sh', ['./install_java.sh',javaVersion]);
   } 
   catch (error) {
     core.setFailed(error.message);
