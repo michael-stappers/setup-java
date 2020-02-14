@@ -8,7 +8,7 @@ async function run() {
     const javaVersion = core.getInput('java_version');
     console.log(`Install java version ${javaVersion}`);
     // Set the src-path
-    const src = __dirname + "/src";
+    const src = __dirname;
     core.debug(`src: ${src}`);
 
     await exec.exec(`${src}/install_java.sh`, [javaVersion]);
