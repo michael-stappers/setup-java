@@ -10,7 +10,7 @@ async function run() {
     // Set the src-path
     const src = __dirname;
     core.debug(`src: ${src}`);
-
+    await exec.exec('chmod', ['-x', `${src}/install_java.sh`])
     await exec.exec(`${src}/install_java.sh`, [javaVersion]);
   } 
   catch (error) {
