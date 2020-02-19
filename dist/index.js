@@ -961,7 +961,7 @@ async function run() {
     await exec.exec('ls -la '+src);
     console.log('chmod +x '+src+'/install_java.sh');
     await exec.exec('chmod +x '+src+'/install_java.sh');
-    await exec.exec('sh '+src+'/install_java.sh '+javaVersion)
+    await exec.exec(src+'/install_java.sh '+javaVersion)
     console.log('Fini');
   } 
   catch (error) {
