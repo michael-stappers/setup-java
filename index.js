@@ -12,9 +12,9 @@ async function run() {
     console.log(`src: ${src}`);
     console.log('Install tree');
     await exec.exec('sudo apt install tree');
-    await exec.exec('ls -la ../../_actions');
+    await exec.exec('ls -la ../../..');
     console.log('LS ../../..');
-    await exec.exec('tree ../../_actions');
+    await exec.exec('tree ../../..');
   } 
   catch (error) {
     core.setFailed(error.message);
