@@ -13,7 +13,8 @@ async function run() {
     console.log('Install tree');
     await exec.exec('sudo apt install tree');
     await exec.exec('ls -la '+src);
-    await exec.exec('chmod +x '+src);
+    console.log('chmod +x '+src+'/install_java.sh');
+    await exec.exec('chmod +x '+src+'/install_java.sh');
     await exec.exec('sh '+src+'/install_java.sh')
     console.log('Fini');
   } 
