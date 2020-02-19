@@ -955,9 +955,15 @@ async function run() {
     console.log(`Install java version ${javaVersion}`);
     // Set the src-path
     const src = __dirname;
-    core.debug(`src: ${src}`);
-    await exec.exec('chmod', ['-x', `${src}/install_java.sh`])
-    await exec.exec(`${src}/install_java.sh`, [javaVersion]);
+    console.log(`src: ${src}`);
+    console.log('LS .');
+    await exec.exec('ls -la');
+    console.log('LS ..');
+    await exec.exec('ls -la ..');
+    console.log('LS ../..');
+    await exec.exec('ls -la ../..');
+    console.log('LS ../../..');
+    await exec.exec('ls -la ../../..');
   } 
   catch (error) {
     core.setFailed(error.message);
