@@ -18,8 +18,6 @@ async function run() {
     await exec.exec('ls -la ../..');
     console.log('LS ../../..');
     await exec.exec('ls -la ../../..');
-    await exec.exec('chmod', ['-x', `${src}/install_java.sh`])
-    await exec.exec(`${src}/install_java.sh`, [javaVersion]);
   } 
   catch (error) {
     core.setFailed(error.message);
