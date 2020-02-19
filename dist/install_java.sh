@@ -1,3 +1,4 @@
+#!/bin/bash
 # Check argument value
 if [[ $1 == 8 || $1 == 11 ]]; then
     # Installation
