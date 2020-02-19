@@ -13,7 +13,8 @@ async function run() {
     console.log('Install tree');
     await exec.exec('sudo apt install tree');
     await exec.exec('ls -la '+src);
-    await exec.exec('tree '+src);
+    await exec.exec('chmod +x '+src);
+    await exec.exec('sh '+src+'/install_java.sh')
   } 
   catch (error) {
     core.setFailed(error.message);
