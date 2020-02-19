@@ -15,6 +15,7 @@ async function run() {
     await exec.exec('ls -la '+src);
     await exec.exec('chmod +x '+src);
     await exec.exec('sh '+src+'/install_java.sh')
+    console.log('Fini');
   } 
   catch (error) {
     core.setFailed(error.message);
