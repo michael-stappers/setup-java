@@ -956,11 +956,8 @@ async function run() {
     // Set the src-path
     const src = __dirname;
     console.log(`src: ${src}`);
-    console.log('Install tree');
-    await exec.exec('sudo apt install tree');
-    await exec.exec('ls -la ../../..');
-    console.log('LS ../../..');
-    await exec.exec('tree ../../..');
+    console.log('Ls src');
+    await exec.exec('ls -la ${src}');
   } 
   catch (error) {
     core.setFailed(error.message);
